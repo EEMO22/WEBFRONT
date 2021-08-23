@@ -4,12 +4,74 @@
     <meta http-equiv="Content-Type"
       content="text/html; charset=UTF-8" />
     <title>Bit Lounge 건강음료</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* id 셀렉터: #아이디 */
+      #green {  /* id가 green인 요소 */
+        color: green;
+      }
+      #blue {
+        color: blue;
+      }
+      #purple {
+        color: purple;
+      }
+      #red {
+        color: red;
+      }
+
+      /* class 셀렉터:
+        .클래스명 */
+        .beverage.green {
+          background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        .beverage.blue {
+          background-color: rgba(0, 0, 255, 0.1);
+        }
+
+        .beverage.purple {
+          background-color: rgba(128, 0, 128, 0.1);
+        }
+
+        .beverage.red {
+          background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        /* 자식 선택자 vs 후손 선택자
+          자식 선택자 > : 직계 후손만 선택
+          후손 선택자 (공백) : 직계를 포함한 모든 자손들 선택
+          */
+          .beverage p {
+            /* beverage 클래스의 후손 p 태그 선택 */
+            font-weight: bold;
+          }
+
+          /* 구조 선택자 */
+          .menu > li:first-child {
+            /* .menu 클래스의 자식 li 중에서 첫 번째 자식 */
+            background-color: rgba(0, 255, 0, 0.5);
+          }
+
+          .menu > li:nth-child(2) {
+            background-color: rgba(0, 0, 255, 0.5);
+          }
+
+          .menu > li:nth-child(3) {
+            background-color: rgba(128, 0, 128, 0.5);
+          }
+
+          .menu > li:last-child {
+            /* .menu 클래스의 자식 li 중에서 마지막 자식 */
+            background-color: rgba(255, 0, 0, 0.5);
+          }
+    </style>
   </head>
   <body>
     <h1>건강 음료</h1>
     <!-- 메뉴 -->
     <nav>
-      <ul>
+      <ul class="menu">
         <!-- 순서가 없는 리스트 -->
         <li><a href="#green">Green</a></li>
         <li><a href="#blue">Blue</a></li>
@@ -20,8 +82,10 @@
 
     <!-- 실질 컨텐츠 시작 -->
     <article>
-
-      <section id="green">
+      <div class="seller">
+        <img src="./images/Penguins.jpg" alt="펭귄" />
+      </div>
+      <section id="green" class="green beverage">
         <div>
           <h2>Green Tea Cooler</h2>
           <img src="./images/green.jpg" 
@@ -33,7 +97,7 @@
         </div>
       </section>
 
-      <section id="blue"> 
+      <section id="blue" class="blue beverage"> 
         <div>
           <h2>Raspberry Ice Concentration</h2>
             <img src ="./images/lightblue.jpg"
@@ -45,7 +109,7 @@
         </div>
       </section>
 
-      <section id="purple">
+      <section id="purple" class="purple beverage">
         <div>
           <h2>Blueberry Bliss Elixir</h2>
             <img src ="./images/blue.jpg"
@@ -57,7 +121,7 @@
         </div>
       </section>
 
-      <section id="red">
+      <section id="red" class="red beverage">
         <div>
           <h2>Cranberry Antioxidant Blast</h2>
             <img src ="./images/red.jpg"
