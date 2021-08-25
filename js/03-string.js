@@ -31,3 +31,47 @@ console.log("2nd Java:", position);
 position += "Java".length;  //  검색 시작 위치 변경
 position = s1.indexOf("Java", position);    //  검색어 없음
 console.log("No Keyword:", position);   //  찾는 검색어 없음 -> -1
+
+//  문자열 치환: replace
+console.log(s1.replace("JavaScript", "JS"));    //  문자열 내의 JavaScript -> Java
+//  String은 불변 자료형: 내부 데이터는 변경되지 않음
+console.log("원본:", s1);
+
+//  좌우 화이트 스페이스 제거: trim
+console.log("            Hello        ".trim());    //  좌우의 화이트 스페이스를 제거
+
+//  --------------- String 보충
+//  " 또는 ' 로 시작하면 다음번 " 또는 ' 까지를 한 문자열로 간주
+//  이스케이프 문자: 특수 문자를 포함할 경우
+//      \n : 개행(줄바꿈)
+//      \t : 탭
+//      \' : 작은 따옴표
+//      \" : 큰 따옴표
+//      \` : 백틱 (ES6)
+//      \$ : 달러기호 (ES6)
+
+let message = "He said, \"Hello\"";
+console.log(message);
+
+let temp = 24;
+//  현재 온도는 temp 도 입니다.
+message = "현재 온도는 " + temp + "도 입니다.";
+console.log(message);
+
+//  ES6의 템플릿 문자열
+//  ` ~ `: 하나의 문자열
+//  ${자바스크립트 표현식}
+//  문자열이 길어질수록 편리하다.
+//  줄바꿈(\n)을 따로 할 필요 없이 엔터키, 많은 띄어쓰기 등 입력을 인식하여 출력
+message = `현재 온도는 ${temp}도 입니다.`;
+console.log("템플릿 문자열:", message);
+
+message = "예전에는 여러 줄 문자열을 만드는 게\n쉽지 않았습니다.";
+console.log(message);
+
+//  템플릿 스트링
+message = `
+하지만 ES6에서는
+아주 손쉽게
+여러 줄 문자열을     만들 수 있습니다.`;
+console.log(message);
